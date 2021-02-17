@@ -1,5 +1,5 @@
 # GooseTools
-GooseTools is the Earlier Single-Tenant version of SpacePaperwork.com. 
+GooseTools is the Earlier Single-Tenant version of SpacePaperwork.com, which is a Loot Tracking, Sales, and Organizational Management Website for the Mobile MMORPG Eve Echoes. 
 
 ## Project Structure
 * The app under config/ is where you'll find the settings files and similar high level project configuration.
