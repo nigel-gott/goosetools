@@ -64,7 +64,8 @@ class SignupFormWithTimezone(SignupForm):
     )
     default_character = forms.ModelChoiceField(
         help_text="Please select the character you are applying with.",
-        queryset=Character.objects.all(), required=False
+        queryset=Character.objects.all(),
+        required=False,
     )
 
     def _disable_field(self, field_name):
