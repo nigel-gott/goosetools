@@ -63,14 +63,12 @@ class SignupFormWithTimezone(SignupForm):
         help_text="Your ingame Broker Fee.",
     )
     default_character = forms.ModelChoiceField(
+        help_text="Please select the character you are applying with.",
         queryset=Character.objects.all(), required=False
     )
 
     def _disable_field(self, field_name):
-        field = self.fields[field_name]
-        field.required = False
-        field.widget = forms.HiddenInput()
-        field.label = ""
+        self.fields.pop(field_name)
 
     @staticmethod
     def corp_label_from_instance(corp):

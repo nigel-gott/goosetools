@@ -46,7 +46,8 @@ class AccountAdapter(DefaultAccountAdapter):
         user.timezone = form.cleaned_data["timezone"]
         user.broker_fee = form.cleaned_data["broker_fee"]
         user.transaction_tax = form.cleaned_data["transaction_tax"]
-        user.default_character = form.cleaned_data["default_character"]
+        if "default_character" in form.cleaned_data:
+            user.default_character = form.cleaned_data["default_character"]
         user.save()
 
 
