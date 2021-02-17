@@ -48,7 +48,12 @@ class Job(HourlyJob):
     help = "Checks discord roles and updates goosetools permissions accordingly"
 
     def execute(self):
-        guild = DiscordGuild.objects.get(active=True)
+        try: 
+            guild = DiscordGuild.objects.get(active=True)
+        except DiscordGuild.DoesNotExist:
+            print(f"Warning: No Discord Guild setup cannot check discord roles.")
+            return 
+
         bot_headers = {
             "Authorization": "Bot {0}".format(guild.bot_token),
             "Content-Type": "application/json",
